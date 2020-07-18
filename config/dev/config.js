@@ -4,5 +4,6 @@ module.exports = {
     "database": process.env.DB_DATABASE,
     "host": process.env.DB_HOST,
     "dialect": "mysql",
+    //Si ponemos console.log en lugar de false, las queries saldrán por consola
     "logging": false
   }
