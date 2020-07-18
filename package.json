@@ -1,0 +1,72 @@
+{
+  "name": "tailorcast",
+  "version": "1.0.0",
+  "description": "tailorcast",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "jest": {
+    "testResultsProcessor": "jest-sonar-reporter",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "controllers/**",
+      "services/**"
+    ],
+    "reporters": [
+      "default",
+      "jest-junit"
+    ],
+    "coverageDirectory": "./test/reports"
+  },
+  "jest-junit": {
+    "outputDirectory": "test/reports/junit",
+    "outputName": "junit.xml",
+    "classNameTemplate": "{classname}-{title}",
+    "titleTemplate": "{classname}-{title}",
+    "ancestorSeparator": " › ",
+    "usePathForSuiteName": "true"
+  },
+  "jestSonar": {
+    "reportPath": "test/reports",
+    "reportFile": "sonar-reporter.xml",
+    "indent": 4
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "crypto2": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "helmet": "^3.21.2",
+    "http-errors": "^1.7.3",
+    "is-image-url": "^1.1.8",
+    "jade": "^1.11.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
+    "mysql2": "^2.1.0",
+    "njwt": "^1.0.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "podcast-feed-parser": "^1.0.1",
+    "sequelize": "^5.21.4",
+    "swagger-jsdoc": "^3.5.0",
+    "swagger-ui-express": "^4.1.3",
+    "uuid-v4": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "jest --runInBand --setupFiles ./test/setup.js",
+    "test-watch": "jest --runInBand --watch --setupFiles ./test/setup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.paradigmadigital.com/tailorcast/tailorcast-backoffice-api"
+  },
+  "author": "",
+  "license": "ISC"
+}
